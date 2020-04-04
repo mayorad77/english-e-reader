@@ -1,0 +1,20 @@
+<div *ngIf="story">
+  <h2 class="main-heading">{{story.name}}</h2>
+  <ul class="chapter-list">
+    <li class="item" *ngFor="let item of story.data; let i = index" (click)="play(item.path)">
+      <div class="no">{{i+1}}</div>
+      <div class="name">{{item.name}}</div>
+    </li>
+  </ul>
+</div>
+<div class="miniplayer" #miniPlayer>
+  <div class="container">
+    <div class="audio-box">
+      <audio controls #player>
+        <source [src]="currentSource" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+    </div>
+  </div>
+</div>

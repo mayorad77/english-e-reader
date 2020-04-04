@@ -1,0 +1,12 @@
+
+<div class="content-box">
+  <ul class="list-story">
+    <li *ngFor="let story of stories">
+      <a routerLink="/story/{{story.id}}">
+        <img [src]="story.image ? story.image : 'not-found'" [alt]="story.name"/>
+        <h3 [innerHTML]="story.name"></h3>
+        <span>{{story.author}}</span>
+      </a>
+    </li>
+ </ul>
+</div>
